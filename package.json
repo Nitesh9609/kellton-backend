@@ -1,0 +1,22 @@
+{
+  "name": "kellton-backend",
+  "version": "1.0.0",
+  "description": "All the APTs related to Ecommerce Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nitesh9609/kellton-backend.git"
+  },
+  "author": "\"Nitesh\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nitesh9609/kellton-backend/issues"
+  },
+  "homepage": "https://github.com/Nitesh9609/kellton-backend#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
