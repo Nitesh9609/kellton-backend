@@ -2,7 +2,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const apiroute = require('./routes/api_route')
-
+const cors = require('cors')
 // Initialize the application
 const app = express()
 
@@ -13,6 +13,9 @@ app.use(express.json())
 
 // send message for your localhost
 app.use('/', apiroute)
+app.use(cors({
+    origin: '*'
+}))
 
 const url = "mongodb+srv://Nitesh9609:Nitesh9609@cluster0.fnrsx.mongodb.net/Kellton-Ecommerce?retryWrites=true&w=majority"
 
