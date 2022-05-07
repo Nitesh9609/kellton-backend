@@ -20,12 +20,8 @@ exports.addProducts = (req,res) =>{
 
     exports.showProducts = (req,res) =>{
         ProductsModel.find()
-        .then(result =>{
-            res.send(result)
-        })
-        .catch(err =>{
-            res.status(400).send(err)
-        })
+        .then(result =>{res.send(result)})
+        .catch(err =>{res.status(400).send(err)})
     }
 
     exports.getCategoryItems = (req,res) => {
@@ -60,6 +56,8 @@ exports.addProducts = (req,res) =>{
 
     exports.deleteCategory = (req,res) =>{
         ProductsModel.deleteOne({
+
+            
             _id:req.params.id
         }, (err) =>{
             if(err)

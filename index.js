@@ -3,23 +3,21 @@ const express = require('express')
 const mongoose = require('mongoose')
 const apiroute = require('./routes/api_route')
 const cors = require('cors')
+const dotenv = require('dotenv')
 // Initialize the application
 const app = express()
 
 // setup server port
 const port = 8080
-app.use(express.json())
+app.use(express.json(),cors())
 
 
 // send message for your localhost
-app.use('/', apiroute)
-app.use(cors({
-    origin: '*'
-}))
+app.use('/api/users', apiroute)
 
-const url = "mongodb+srv://Nitesh9609:Nitesh9609@cluster0.fnrsx.mongodb.net/Kellton-Ecommerce?retryWrites=true&w=majority"
+dotenv.config()
 
-mongoose.connect(url, {useNewUrlParser:true} )
+mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser:true} )
 .then(() =>{
     console.log('Database Connected')
 }).catch(err => console.log(err))
